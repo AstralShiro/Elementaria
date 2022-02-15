@@ -1,0 +1,3 @@
+displayName = Elementaria
+author = SN Company
+version = 0.0.1
