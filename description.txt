@@ -1,1 +1,25 @@
-Elementaria is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Name : Elementaria
+Version : 0.0.2
+Tags : Fantasy, rpg, extra content
+- - -
+This mod won't add a great deal out of vanilla other than a few extra weapons, items, supplies etc. 
+The mod will focus on adding variants to vanilla weapons, for example the ice blade, there will be the flame blade, poison blade,
+ same design but different features with buffs and debuffs on elemental damage based on the biome.
+- - -
+Update : 
+Icon updating
+
+Content list :
+
+9 items
+2 weapons
+
+- - -
+
+New content :
+
+Item : Stone fragment, Ice stone, Fire stone, Light stone, Dark stone, Earth stone, Air stone, Astral stone, Thunder stone.
+Weapons : Loyaltly, Grandblue.
+- - -
+
+- SN Company. -

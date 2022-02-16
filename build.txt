@@ -1,3 +1,4 @@
-displayName = Elementaria
+displayName = [i/p57:520] [c/fec2ff:Elementaria] [i/p57:520]
 author = SN Company
-version = 0.0.1
+version = 0.0.2
+homepage = https://discord.gg/pCKg4nm3W4
