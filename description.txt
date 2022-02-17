@@ -1,5 +1,5 @@
 Name : Elementaria
-Version : 0.0.2
+Version : 0.0.3
 Tags : Fantasy, rpg, extra content
 - - -
 This mod won't add a great deal out of vanilla other than a few extra weapons, items, supplies etc. 
