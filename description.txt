@@ -1,5 +1,5 @@
 Name : Elementaria
-Version : 0.0.3
+Version : 0.0.4
 Tags : Fantasy, rpg, extra content
 - - -
 Have you ever wanted a weapon but with a different element? well, with this mod you can have it.
@@ -33,4 +33,4 @@ TILES :
 - - -
 
 SN Company.
-(enter our discord to not miss our works outside the terraria).
+(enter in our discord to not miss our works outside the terraria).

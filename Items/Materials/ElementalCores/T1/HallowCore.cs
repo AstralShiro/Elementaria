@@ -7,11 +7,11 @@ using Elementaria.Items.Materials.Globe;
 
 namespace Elementaria.Items.Materials.ElementalCores.T1
 {
-	public class HollowCore : ModItem
+	public class HallowCore : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Hollow Core");
+			DisplayName.SetDefault("Hallow Core");
 			Tooltip.SetDefault("A powerful and bright elemental core, allows you to create holy element weapons");
 		}
 
