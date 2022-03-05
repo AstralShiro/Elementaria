@@ -2,24 +2,35 @@ Name : Elementaria
 Version : 0.0.3
 Tags : Fantasy, rpg, extra content
 - - -
-This mod won't add a great deal out of vanilla other than a few extra weapons, items, supplies etc. 
-The mod will focus on adding variants to vanilla weapons, for example the ice blade, there will be the flame blade, poison blade,
- same design but different features with buffs and debuffs on elemental damage based on the biome.
+Have you ever wanted a weapon but with a different element? well, with this mod you can have it.
+
+The mod focuses on vanilla, for the addition of elemental weapons, adds a wide range of extra items
+a great grinding to restore the sense of exploring and grinding the enemies of the biome of the element you are interested in.
+
+The mod is under development by releasing some items each version, keep updating and playing our mod so as not to miss anything new,
+in this way you can prepare for the release of the weapons.
+
+This mod also changes the combat style of the weapons giving them a unique and never seen effect.
+
+This update:
+MATERIALS
+- Core : Elemental Core, Empty core, Elemental Globes
+TILES
+- Crafting : New crafting station for craft the new weapon variants
+
+Content List:
+- 22 Items
+- 2 Weapons
+
 - - -
-Update : 
-Icon updating
-
-Content list :
-
-9 items
-2 weapons
-
+New content:
+ITEMS : 
+- Core : Air Core, Corruption Core, Crimson Core, Earth Core, Fire Core, Hollow Core, Ice Core, Thunder Core, Water Core.
+- Globe : Air Globe, Corruption Globe, Crimson Globe, Earth Globe, Fire Globe, Hollow Globe, Ice Globe, Thunder Globe, Water Globe.
+- Empty Core : Empty Core, Rare Empty Core, Mystich Empty Core, Dream Empty Core.
+TILES :
+- Crafting Station : Elemental Pedestal
 - - -
 
-New content :
-
-Item : Stone fragment, Ice stone, Fire stone, Light stone, Dark stone, Earth stone, Air stone, Astral stone, Thunder stone.
-Weapons : Loyaltly, Grandblue.
-- - -
-
-- SN Company. -
+SN Company.
+(enter our discord to not miss our works outside the terraria).

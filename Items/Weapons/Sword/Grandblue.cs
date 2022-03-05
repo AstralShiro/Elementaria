@@ -32,7 +32,7 @@ namespace Elementaria.Items.Weapons.Sword
 		public override void AddRecipes() 
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Items.Materials.IceStone>(), 2);
+			recipe.AddIngredient(ModContent.ItemType<Items.Materials.Minerals.IceStone>(), 2);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
