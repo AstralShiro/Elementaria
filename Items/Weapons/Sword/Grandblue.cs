@@ -1,5 +1,11 @@
-using Terraria.ID;
+using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
+using Terraria.Localization;
+using System.Linq;
+using Terraria.Utilities;
 
 namespace Elementaria.Items.Weapons.Sword
 {
@@ -7,13 +13,13 @@ namespace Elementaria.Items.Weapons.Sword
 	{
 		public override void SetStaticDefaults() 
 		{
-			// DisplayName.SetDefault("Test"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Apply chilled on the hit");
+			DisplayName.SetDefault("Grandblue");
+			Tooltip.SetDefault("The swords power grows as you progress\n Ends once you reach Hardmode.");
 		}
 
 		public override void SetDefaults() 
 		{
-			item.damage = 50;
+			item.damage = 10;
 			item.melee = true;
 			item.width = 50;
 			item.height = 50;
@@ -25,9 +31,38 @@ namespace Elementaria.Items.Weapons.Sword
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-
-			item.buffType = BuffID.Chilled;
 		}
+
+		public override bool CanUseItem(Player player)
+		{
+			if (NPC.downedSlimeKing)
+				item.damage = 18;
+
+			if (NPC.downedBoss1)
+				item.damage = 23;
+
+			if (NPC.downedBoss2)
+				item.damage = 27;
+
+			if (NPC.downedQueenBee)
+				item.damage = 35;
+
+			if (NPC.downedBoss3)
+				item.damage = 41;
+			
+			if (Main.hardMode)
+			{
+				item.damage = 55;
+				item.useTime = 10;
+				item.useAnimation = 30;
+			}
+			return true;
+		}
+
+	       public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+               {
+             	   target.AddBuff(BuffID.Chilled, 320);
+               }
 
 		public override void AddRecipes() 
 		{
