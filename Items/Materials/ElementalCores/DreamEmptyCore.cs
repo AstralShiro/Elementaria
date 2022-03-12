@@ -1,6 +1,8 @@
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Items.Materials.Minerals;
+
+using Elementaria.Items.Materials;
+using Elementaria.Items.Materials.ElementalCores;
 
 namespace Elementaria.Items.Materials.ElementalCores
 {
@@ -23,7 +25,8 @@ namespace Elementaria.Items.Materials.ElementalCores
 		public override void AddRecipes() 
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<StoneFragment>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<MoonLordHeart>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<MysticEmptyCore>(), 5);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

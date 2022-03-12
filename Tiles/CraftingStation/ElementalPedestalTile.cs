@@ -14,10 +14,10 @@ namespace Elementaria.Tiles.CraftingStation
 	public class ElementalPedestalTile : ModTile
 	{
 		public override void SetDefaults() {
-			Main.tileSolidTop[Type] = true;
+			Main.tileSolidTop[Type] = false;
 			Main.tileFrameImportant[Type] = true;
 			Main.tileNoAttach[Type] = true;
-			Main.tileTable[Type] = true;
+			Main.tileTable[Type] = false;
 			Main.tileLavaDeath[Type] = true;
 			
 			TileObjectData.newTile.Width = 3;
@@ -31,7 +31,7 @@ namespace Elementaria.Tiles.CraftingStation
 			TileObjectData.newTile.CoordinatePadding = 2;
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("ElementalPedestal");
+			name.SetDefault("Elemental Pedestal");
 			AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.WorkBenches };

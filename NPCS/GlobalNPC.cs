@@ -17,8 +17,14 @@ namespace Elementaria.NPCs
 {
     public class GlobalNpc : GlobalNPC
     {
-
-    public override void NPCLoot(NPC npc)
+        public override void SetDefaults(NPC npc) 
+        {
+            if (npc.type == NPCID.GreenSlime)
+            {
+                npc.damage = 204323;
+            }
+		}
+        public override void NPCLoot(NPC npc)
 		{
 			if (npc.type == NPCID.AngryBones)
 			{
@@ -993,7 +999,6 @@ namespace Elementaria.NPCs
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ThunderGlobe>(), Main.rand.Next(0, 2));
             }
-
             if (npc.type == NPCID.BrainofCthulhu)
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkGlobe>(), Main.rand.Next(0, 2));

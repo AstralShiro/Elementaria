@@ -9,7 +9,7 @@ namespace Elementaria.Items.Materials
 		public override void SetStaticDefaults() 
 		{
 			DisplayName.SetDefault("Moon Lord Heart");
-			Tooltip.SetDefault("Heart of the dreamer, can be used to craft powerful weapons");
+			Tooltip.SetDefault("Heart of the King fo the dreams, can be used to craft one Crafting Station T4");
 		}
 
 		public override void SetDefaults() {

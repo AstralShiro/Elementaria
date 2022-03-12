@@ -1,5 +1,5 @@
 Name : Elementaria
-Version : 0.0.4
+Version : 0.0.5
 Tags : Fantasy, rpg, extra content
 - - -
 Have you ever wanted a weapon but with a different element? well, with this mod you can have it.
@@ -14,22 +14,20 @@ This mod also changes the combat style of the weapons giving them a unique and n
 
 This update:
 MATERIALS
-- Core : Elemental Core, Empty core, Elemental Globes
+- Weapons : 9 Sword
 TILES
 - Crafting : New crafting station for craft the new weapon variants
 
 Content List:
 - 22 Items
-- 2 Weapons
+- 9 Weapons
 
 - - -
 New content:
 ITEMS : 
-- Core : Air Core, Corruption Core, Crimson Core, Earth Core, Fire Core, Hollow Core, Ice Core, Thunder Core, Water Core.
-- Globe : Air Globe, Corruption Globe, Crimson Globe, Earth Globe, Fire Globe, Hollow Globe, Ice Globe, Thunder Globe, Water Globe.
-- Empty Core : Empty Core, Rare Empty Core, Mystich Empty Core, Dream Empty Core.
+- Weapons : Spiral swords.
 TILES :
-- Crafting Station : Elemental Pedestal
+- Crafting Station : Arcane Smithy.
 - - -
 
 SN Company.

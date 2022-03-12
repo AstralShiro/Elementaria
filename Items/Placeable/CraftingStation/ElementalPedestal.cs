@@ -30,7 +30,7 @@ namespace Elementaria.Items.Placeable.CraftingStation
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Wood, 5);
+			recipe.AddIngredient(ItemID.StoneBlock, 20);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 ;			recipe.AddRecipe();
