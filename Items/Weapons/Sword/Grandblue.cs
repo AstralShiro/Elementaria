@@ -55,6 +55,7 @@ namespace Elementaria.Items.Weapons.Sword
 				item.damage = 55;
 				item.useTime = 10;
 				item.useAnimation = 30;
+				
 			}
 			return true;
 		}
