@@ -20,16 +20,12 @@ namespace Elementaria
 		///Biome
 		public bool ZoneDirtLayerHeightMod;
 		public bool ZoneJungleMod;
-
 		///Event
-		public bool GoblinInvasion;
-
 		public override void UpdateBiomes()
 		{
 			ZoneDirtLayerHeightMod = player.ZoneDirtLayerHeight;
 			ZoneJungleMod = player.ZoneJungle;
-
-			
+		
 		}
 	}
 }

@@ -30,7 +30,7 @@ namespace Elementaria.Items.Weapons.Sword
             item.shootSpeed = 1f;
             item.rare = ItemRarityID.Yellow;
             item.autoReuse = true;
-            item.shoot = ModContent.ProjectileType<Projectiles.Melee.Loyaltly>();
+            item.shoot = ModContent.ProjectileType<Projectiles.Sword.Loyaltly>();
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

@@ -1,49 +1,36 @@
-using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Graphics.Shaders;
 
-namespace Elementaria.Projectiles.Weapons.Swords.IceBlade
+namespace Elementaria.Projectiles.Sword.Iceblade
 {
-    public class AirBladeProj : ModProjectile
+    public class AirBladeProj : ModProjectile //You will need to add sprites for them
     {
-
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Air bolt");
-        }
-
         public override void SetDefaults()
         {
-            projectile.width = 16;
-            projectile.height = 16;
-
+            projectile.ignoreWater = false;
+            projectile.width = 24;
+            projectile.penetrate = 1;
+            projectile.height = 24;
             projectile.friendly = true;
-            projectile.hostile = false;
-            
-            projectile.tileCollide = false;
-            projectile.penetrate = -1;
-            projectile.melee = true;
-            projectile.timeLeft = 90;
+            projectile.light = 1f;
+            projectile.tileCollide = true;
+            projectile.aiStyle = 28;
         }
-        public override Color? GetAlpha(Color lightColor)
-		{
-			return new Color(20, 140, 250, 100);
-		}
+
         public override void AI()
         {
-            projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
+            if (Main.rand.NextBool(6))
             {
-            if (Main.rand.NextBool(3))
-            {
-                Dust dust = Dust.NewDustDirect(projectile.position, projectile.height, projectile.width, ModContent.DustType<IceNpcDust>(),
-                    projectile.velocity.X * .2f, projectile.velocity.Y * .2f, 150, Scale: 1.2f);
-                dust.velocity += projectile.velocity * 0.3f;
-                dust.velocity *= 0.2f;
+                Dust.NewDust(projectile.Center, projectile.width, projectile.height, DustID.Snow); //Add any dust here
             }
-            }
+        }
+
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+            Main.PlaySound(SoundID.Dig, projectile.position);
+            return false;
         }
     }
 }
