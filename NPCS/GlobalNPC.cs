@@ -1064,6 +1064,9 @@ namespace Elementaria.NPCs
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FireGlobe>(), Main.rand.Next(0, 2));
             }
+
+            //Modded NPCs
+            
         }
     }
 }

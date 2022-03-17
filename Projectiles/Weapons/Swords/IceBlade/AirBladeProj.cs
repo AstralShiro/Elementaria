@@ -3,21 +3,23 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Elementaria.Projectiles.Sword.Iceblade
+using Elementaria.Dusts;
+
+namespace Elementaria.Projectiles.Weapons.Swords.IceBlade
 {
     public class AirBladeProj : ModProjectile //You will need to add sprites for them
     {
-        public override void SetDefaults()
+		public override void SetDefaults() 
         {
             projectile.ignoreWater = false;
-            projectile.width = 24;
+            projectile.width = 2;
             projectile.penetrate = 1;
             projectile.height = 24;
             projectile.friendly = true;
             projectile.light = 1f;
             projectile.tileCollide = true;
             projectile.aiStyle = 28;
-        }
+		}
 
         public override void AI()
         {
@@ -25,12 +27,6 @@ namespace Elementaria.Projectiles.Sword.Iceblade
             {
                 Dust.NewDust(projectile.Center, projectile.width, projectile.height, DustID.Snow); //Add any dust here
             }
-        }
-
-        public override bool OnTileCollide(Vector2 oldVelocity)
-        {
-            Main.PlaySound(SoundID.Dig, projectile.position);
-            return false;
         }
     }
 }

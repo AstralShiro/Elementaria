@@ -8,7 +8,7 @@ namespace Elementaria.Items.Rune
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Curse Flamge Rune");
+            DisplayName.SetDefault("Curse Flame Rune");
             Tooltip.SetDefault("Apply Cursed Flame in your attacks");
         }
 

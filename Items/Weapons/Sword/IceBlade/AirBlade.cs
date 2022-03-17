@@ -24,12 +24,15 @@ namespace Elementaria.Items.Weapons.Sword.IceBlade
             item.melee = true;
             item.knockBack = 4;
             item.crit = 6;
-            item.useAnimation = item.useTime = 20;
+            item.useAnimation = 35;
+            item.useTime = 35;
             item.useStyle = ItemUseStyleID.SwingThrow;
-            item.shootSpeed = 2f;
+            item.shootSpeed = 8f;
             item.rare = ItemRarityID.White;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("AirBladeProj");
+
+            item.UseSound = SoundID.Item28;
         }
     }
 }
