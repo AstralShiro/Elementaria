@@ -11,17 +11,17 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Audio;
 using System.Collections.Specialized;
 
-namespace Elementaria.NPCs.Bosses.Butterveils.Physic
+namespace Elementaria.NPCs.Bosses.Butterveils.FirstTransf
 {
     //[AutoloadBossHead]
-    public class ButterveilNPC : ModNPC
+    public class ButterveilFirstTransf : ModNPC
     {
         private Player player;
         private float speed;
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Arianel - The Icy Watcher");
+            DisplayName.SetDefault("Butterveil, The ancestral");
 
         }
 

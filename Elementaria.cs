@@ -24,14 +24,29 @@ namespace Elementaria
             {
                 return;
             }
-            if (Main.LocalPlayer.GetModPlayer<ElementariaPlayer>().ZoneDirtLayerHeightMod)
+            if (Main.LocalPlayer.GetModPlayer<ElementariaPlayer>().ZoneOverworldHeight)
             {
                 music = GetSoundSlot(SoundType.Music, "Sounds/Music/Forest");
                 priority = MusicPriority.BiomeMedium;
             }
-            if (Main.LocalPlayer.GetModPlayer<ElementariaPlayer>().ZoneJungleMod)
+            if (Main.LocalPlayer.GetModPlayer<ElementariaPlayer>().ZoneCrimson)
             {
-                music = GetSoundSlot(SoundType.Music, "Sounds/Music/Jungle");
+                music = GetSoundSlot(SoundType.Music, "Sounds/Music/Crimson");
+                priority = MusicPriority.BiomeMedium;
+            }
+            if (Main.LocalPlayer.GetModPlayer<ElementariaPlayer>().ZoneCorrupt)
+            {
+                music = GetSoundSlot(SoundType.Music, "Sounds/Music/Corruption");
+                priority = MusicPriority.BiomeMedium;
+            }
+            if (Main.LocalPlayer.GetModPlayer<ElementariaPlayer>().ZoneSnow)
+            {
+                music = GetSoundSlot(SoundType.Music, "Sounds/Music/Snow");
+                priority = MusicPriority.BiomeMedium;
+            }
+            if (Main.LocalPlayer.GetModPlayer<ElementariaPlayer>().ZoneDungeon)
+            {
+                music = GetSoundSlot(SoundType.Music, "Sounds/Music/Dungeon");
                 priority = MusicPriority.BiomeMedium;
             }
         }

@@ -11,9 +11,24 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.World.Generation;
 
-namespace MyWorld
+using Elementaria.Tiles.VorumBiome.BlocksTile;
+
+namespace Elementaria
 {
 	public class MyWorld : ModWorld
 	{
+		//Vorum Biomje
+		int VorumTiles = 0;
+		int SpawnPointX = Main.spawnTileX;
+		int SpawnPointY = Main.spawnTileY;
+
+		public override void TileCountsAvailable(int[] tileCounts)
+		{
+			VorumTiles = tileCounts[ModContent.TileType<VorumGrassTile>()];
+			//+ tileCounts[ModContent.TileType<SpiritStone>()]
+			//+ tileCounts[ModContent.TileType<Spiritsand>()]
+			//+ tileCounts[ModContent.TileType<SpiritIce>()]
+			//+ tileCounts[ModContent.TileType<SpiritGrass>()];
+		}
 	}
 }

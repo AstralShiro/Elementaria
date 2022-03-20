@@ -18,14 +18,25 @@ namespace Elementaria
 	public class ElementariaPlayer : ModPlayer
 	{
 		///Biome
-		public bool ZoneDirtLayerHeightMod;
-		public bool ZoneJungleMod;
+		public bool ZoneOverworldHeight;
+		public bool ZoneCrimson;
+		public bool ZoneCorrupt;
+		public bool ZoneSnow;
+		public bool ZoneDungeon;
+
 		///Event
 		public override void UpdateBiomes()
 		{
-			ZoneDirtLayerHeightMod = player.ZoneDirtLayerHeight;
-			ZoneJungleMod = player.ZoneJungle;
-		
+			ZoneOverworldHeight = player.ZoneOverworldHeight;
+
+			ZoneCorrupt = player.ZoneCorrupt;
+
+			ZoneCrimson = player.ZoneCrimson;
+
+			ZoneSnow = player.ZoneSnow;
+
+			ZoneDungeon = player.ZoneDungeon;
+
 		}
 	}
 }
