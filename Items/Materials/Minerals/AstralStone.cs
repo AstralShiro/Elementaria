@@ -1,6 +1,9 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Items.Materials;
+
 
 namespace Elementaria.Items.Materials.Minerals
 {
@@ -10,6 +13,7 @@ namespace Elementaria.Items.Materials.Minerals
 		{
 			DisplayName.SetDefault("Astral stone");
 			Tooltip.SetDefault("A strange stone");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5,6));
 		}
 
 		public override void SetDefaults() {
@@ -27,7 +31,7 @@ namespace Elementaria.Items.Materials.Minerals
 			recipe.AddIngredient(ModContent.ItemType<IceStone>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<EarthStone>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<ThunderStone>(), 10);
-			recipe.AddIngredient(ModContent.ItemType<HolyStone>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<HallowStone>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<AirStone>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<DarkStone>(), 10);
 			recipe.SetResult(this);

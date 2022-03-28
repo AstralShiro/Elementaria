@@ -21,15 +21,14 @@ namespace Elementaria.Items.Weapons.Guns.TacticalSniper
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.useTime = 36;
-			item.useAnimation = 50;
+			item.useTime = item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 4;
 			item.value = 10000;
 			item.rare = ItemRarityID.White;
-			item.UseSound = SoundID.Item33;
-			item.autoReuse = true;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/LaserShoot");
+			item.autoReuse = false;
 			item.shoot = ModContent.ProjectileType<TacticalSniperFireProj>();
 			item.shootSpeed = 16f;
 			//item.useAmmo = AmmoID.Bullet;

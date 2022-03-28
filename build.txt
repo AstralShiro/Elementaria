@@ -1,4 +1,4 @@
 displayName = [i/p57:520] [c/fec2ff:Elementaria] [i/p57:520]
 author = SN Company
 version = 0.0.5
-homepage = https://discord.gg/pCKg4nm3W4
+homepage = https://discord.gg/6e5cBqQwaS

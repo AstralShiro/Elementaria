@@ -1,5 +1,10 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+
+
 using Elementaria.Items.Materials;
 
 namespace Elementaria.Items.Materials.Minerals
@@ -10,6 +15,7 @@ namespace Elementaria.Items.Materials.Minerals
 		{
 			DisplayName.SetDefault("Air stone");
 			Tooltip.SetDefault("A windy stone");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5,6));
 		}
 
 		public override void SetDefaults() {
@@ -18,6 +24,9 @@ namespace Elementaria.Items.Materials.Minerals
 			item.maxStack = 999;
 			item.value = 100;
 			item.rare = ItemRarityID.Blue;
+		}
+			public override void PostUpdate() {
+			Lighting.AddLight(item.Center, Color.WhiteSmoke.ToVector3() * 0.55f * Main.essScale);
 		}
 
 		public override void AddRecipes() 

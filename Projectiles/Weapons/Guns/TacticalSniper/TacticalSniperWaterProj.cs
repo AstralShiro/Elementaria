@@ -29,5 +29,9 @@ namespace Elementaria.Projectiles.Weapons.Guns.TacticalSniper
             aiType = ProjectileID.GreenLaser;
         }
         public override Color? GetAlpha(Color lightColor) => new Color(145, 220, 185, 0);
+		public override void Kill(int timeLeft) 
+        {
+            Main.PlaySound(SoundID.Item20, projectile.position);
+        }
     }
 }

@@ -1,15 +1,19 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Items.Materials;
+
 
 namespace Elementaria.Items.Materials.Minerals
 {
-	public class HolyStone : ModItem
+	public class HallowStone : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Holy stone");
+			DisplayName.SetDefault("Hallow stone");
 			Tooltip.SetDefault("A saint stone");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5,6));
 		}
 
 		public override void SetDefaults() {

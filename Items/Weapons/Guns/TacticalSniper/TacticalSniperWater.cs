@@ -7,6 +7,7 @@ using Elementaria.Items.Materials.ElementalCores.T1;
 using Elementaria.Tiles.CraftingStation;
 using Elementaria.Projectiles.Weapons.Guns.TacticalSniper;
 
+
 namespace Elementaria.Items.Weapons.Guns.TacticalSniper
 {
 	public class TacticalSniperWater : ModItem
@@ -21,15 +22,14 @@ namespace Elementaria.Items.Weapons.Guns.TacticalSniper
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.useTime = 36;
-			item.useAnimation = 50;
+			item.useTime = item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 4;
 			item.value = 10000;
 			item.rare = ItemRarityID.White;
-			item.UseSound = SoundID.Item33;
-			item.autoReuse = true;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/LaserShoot");
+			item.autoReuse = false;
 			item.shoot = ModContent.ProjectileType<TacticalSniperWaterProj>();
 			item.shootSpeed = 16f;
 			//item.useAmmo = AmmoID.Bullet;
@@ -38,8 +38,6 @@ namespace Elementaria.Items.Weapons.Guns.TacticalSniper
 		{
 			return new Vector2(-10, 0);
 		}
-		public override Color? GetAlpha(Color lightColor) => new Color(145, 220, 185, 0);
-
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<WaterCore>(), 10);
