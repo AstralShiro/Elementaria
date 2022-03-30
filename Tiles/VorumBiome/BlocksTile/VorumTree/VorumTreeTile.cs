@@ -9,7 +9,7 @@ namespace Elementaria.Tiles.VorumBiome.BlocksTile.VorumTree
 	{
 		private Mod mod {
 			get {
-				return ModLoader.GetMod("SpiritMod");
+				return ModLoader.GetMod("Elementaria");
 			}
 		}
 
@@ -17,12 +17,6 @@ namespace Elementaria.Tiles.VorumBiome.BlocksTile.VorumTree
 		{
 			return 1;
 		}
-
-		//public override int GrowthFXGore()
-		//{
-		//	return mod.GetGoreSlot("Gores/ExampleTreeFX");
-		//}
-
 		public override int DropWood()
 		{
 			return ModContent.ItemType<VorumWood>();
@@ -30,20 +24,17 @@ namespace Elementaria.Tiles.VorumBiome.BlocksTile.VorumTree
 
 		public override Texture2D GetTexture()
 		{
-			return mod.GetTexture("Tiles/Block/SpiritTree");
+			return mod.GetTexture("Tiles/VorumBiome/BlocksTile/VorumTree/VorumTreeTile");
 		}
 
 		public override Texture2D GetTopTextures(int i, int j, ref int frame, ref int frameWidth, ref int frameHeight, ref int xOffsetLeft, ref int yOffset)
 		{
-			frameWidth = 114;
-			frameHeight = 96;
-			xOffsetLeft = 48;
-			return mod.GetTexture("Tiles/Block/SpiritTree_Tops");
+			return mod.GetTexture("Tiles/VorumBiome/BlocksTile/VorumTree/VorumTreeTile_Tops");
 		}
 
 		public override Texture2D GetBranchTextures(int i, int j, int trunkOffset, ref int frame)
 		{
-			return mod.GetTexture("Tiles/Block/SpiritTree_Branches");
+			return mod.GetTexture("Tiles/VorumBiome/BlocksTile/VorumTree/VorumTreeTile_Branches");
 		}
 	}
 }

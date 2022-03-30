@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -26,6 +27,12 @@ namespace Elementaria.Projectiles.Weapons.Guns.TacticalSniper
             projectile.extraUpdates = 1;
             projectile.scale = 1.75f;
             aiType = ProjectileID.GreenLaser;
+        }
+        
+		public override Color? GetAlpha(Color lightColor) => new Color(255, 255, 255, 0);
+        public override void Kill(int timeLeft) 
+        {
+            Main.PlaySound(SoundID.Item20, projectile.position);
         }
     }
 }

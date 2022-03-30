@@ -15,6 +15,8 @@ namespace Elementaria.Tiles.VorumBiome.BlocksTile
 			Main.tileLighted[Type] = false;
 			//drop = ItemType<Items.Placeable.VorumBiome.VorumStone>();
 			AddMapEntry(new Color(79, 79, 79));
+			
+			drop = 3;
 		}
 	}
 }

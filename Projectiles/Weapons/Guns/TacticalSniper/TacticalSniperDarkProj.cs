@@ -30,5 +30,9 @@ namespace Elementaria.Projectiles.Weapons.Guns.TacticalSniper
         }
         
 		public override Color? GetAlpha(Color lightColor) => new Color(115, 65, 130, 0);
+        public override void Kill(int timeLeft) 
+        {
+            Main.PlaySound(SoundID.Item20, projectile.position);
+        }
     }
 }
