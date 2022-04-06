@@ -2,6 +2,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Elementaria.Items.Materials.Minerals;
 
+using Elementaria.Tiles.CraftingStation;
+
 namespace Elementaria.Items.Materials.ElementalCores
 {
 	public class EmptyCore : ModItem
@@ -24,7 +26,7 @@ namespace Elementaria.Items.Materials.ElementalCores
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<StoneFragment>(), 5);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddTile(ModContent.TileType<ElementalPedestalTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

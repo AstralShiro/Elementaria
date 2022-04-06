@@ -1,6 +1,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Items.Materials.Minerals;
+
+using Elementaria.Tiles.CraftingStation;
 
 namespace Elementaria.Items.Materials.ElementalCores
 {
@@ -23,9 +24,9 @@ namespace Elementaria.Items.Materials.ElementalCores
 		public override void AddRecipes() 
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<StoneFragment>(), 5);
-			recipe.AddIngredient(ItemID.GoldOre, 20);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddIngredient(ModContent.ItemType<WoFHeart>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<EmptyCore>(), 1);
+			recipe.AddTile(ModContent.TileType<ElementalPedestalTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

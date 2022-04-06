@@ -8,7 +8,7 @@ namespace Elementaria.Items.Materials.Globe
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Dark Glboe");
+			DisplayName.SetDefault("Dark Globe");
 			Tooltip.SetDefault("The soul of a living being infused into a globe, second material to craft the Dark Elemental Core");
 		}
 

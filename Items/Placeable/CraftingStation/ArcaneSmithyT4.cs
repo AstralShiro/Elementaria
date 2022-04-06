@@ -32,7 +32,7 @@ namespace Elementaria.Items.Placeable.CraftingStation
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<ArcaneSmithyT4>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<ArcaneSmithyT3>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<MoonLordHeart>(),1);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);

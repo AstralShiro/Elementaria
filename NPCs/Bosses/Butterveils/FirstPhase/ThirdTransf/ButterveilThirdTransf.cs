@@ -11,10 +11,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Audio;
 using System.Collections.Specialized;
 
-namespace Elementaria.NPCs.Bosses.Butterveils.FirstTransf
+namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.ThirdTransf
 {
     //[AutoloadBossHead]
-    public class ButterveilFirstTransf : ModNPC
+    public class ButterveilThirdTransf : ModNPC
     {
         private Player player;
         private float speed;

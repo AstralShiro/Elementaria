@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
 
+using Elementaria.Tiles.VorumBiome;
 using Elementaria.Items.Placeable.Decoration;
 
 namespace Elementaria.Tiles.VorumBiome.BlocksTile.VorumTree
