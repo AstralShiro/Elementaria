@@ -4,15 +4,33 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Projectiles.Weapons.Shortswords;
+using Elementaria.Projectiles.Weapons.Swords.IceBlade;
 
-namespace Elementaria.Items.Weapons
+namespace Elementaria.Items.Weapons.Sword.IceBlade
 {
     public class ElementariaGlobalItem : GlobalItem
     {
         public override void SetDefaults(Item item)
         {
-            if (item.type == ItemID.CopperShortsword) //Just add all the short swords
+            if (item.type == ItemID.IceBlade)
+            {
+            item.width = 34;
+            item.height = 40;
+            item.damage = 12;
+            item.melee = true;
+            item.knockBack = 4;
+            item.crit = 6;
+            item.useAnimation = 35;
+            item.useTime = 35;
+            item.useStyle = ItemUseStyleID.SwingThrow;
+            item.shootSpeed = 8f;
+            item.rare = ItemRarityID.White;
+            item.autoReuse = true;
+            item.shoot = ModContent.ProjectileType<IceBladeProj>();
+            item.UseSound = SoundID.Item28;
+            }
+
+            /*if (item.type == ItemID.CopperShortsword) //Just add all the short swords
             {
                 item.shoot = ModContent.ProjectileType<CopperShortswordProj>();
                 item.shootSpeed = 18f;
@@ -106,7 +124,7 @@ namespace Elementaria.Items.Weapons
                 item.useStyle = ItemUseStyleID.SwingThrow;
                 item.noUseGraphic = true;
 
-            }
+            }*/
         }
     }
 }

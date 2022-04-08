@@ -2,10 +2,14 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Graphics.Shaders;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+
 
 namespace Elementaria.Projectiles.Weapons.Swords.IceBlade
 {
-    public class AirBladeProj : ModProjectile //You will need to add sprites for them
+    public class DarkBladeProj : ModProjectile //You will need to add sprites for them
     {
 		public override void SetDefaults() 
         {
