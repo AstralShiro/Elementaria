@@ -1,6 +1,8 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Items.Materials;
 
 namespace Elementaria.Items.Materials.Globe
 {
@@ -8,8 +10,9 @@ namespace Elementaria.Items.Materials.Globe
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Air Glboe");
+			DisplayName.SetDefault("Air Globe");
 			Tooltip.SetDefault("The soul of a living being infused into a globe, second material to craft the Air Elemental Core");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 9));
 		}
 
 		public override void SetDefaults() {

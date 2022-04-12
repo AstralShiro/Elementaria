@@ -1,7 +1,8 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Items.Materials;
-
 namespace Elementaria.Items.Materials.Globe
 {
 	public class DarkGlobe : ModItem
@@ -10,6 +11,7 @@ namespace Elementaria.Items.Materials.Globe
 		{
 			DisplayName.SetDefault("Dark Globe");
 			Tooltip.SetDefault("The soul of a living being infused into a globe, second material to craft the Dark Elemental Core");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 6));
 		}
 
 		public override void SetDefaults() {

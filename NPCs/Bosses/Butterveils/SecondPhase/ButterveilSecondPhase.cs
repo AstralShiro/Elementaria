@@ -24,30 +24,32 @@ namespace Elementaria.NPCs.Bosses.Butterveils.SecondPhase
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Butterveil, The ancestral");
+			Main.npcFrameCount[npc.type] = 6;
 
         }
 
         public override void SetDefaults()
         {
-            npc.aiStyle = 5;
-            npc.lifeMax = 3500;
-            npc.damage = 10;
-            npc.defense = 10;
+            npc.lifeMax = 30000;
+            npc.damage = 50;
+            npc.defense = 45;
+
             npc.knockBackResist = 0f;
-            npc.width = 162;
-            npc.height = 150;
+
             npc.value = Item.buyPrice(0, 15, 00, 00);
-            npc.npcSlots = 1f;
+
+            npc.npcSlots = 5f;
+
             npc.boss = true;
-            npc.lavaImmune = false;
+
+            npc.lavaImmune = true;
             npc.noGravity = true;
             npc.noTileCollide = true;
-            npc.HitSound = mod.GetLegacySoundSlot(SoundType.NPCHit, "Sounds/npcHit/HitIceBoss");
-            npc.DeathSound = mod.GetLegacySoundSlot(SoundType.NPCHit, "Sounds/npcDeath/DeathIceBoss");
-            music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/ElementalMusic");
-            bossBag = mod.ItemType("IceBossBag");
-            npc.netAlways = true;
-            Main.npcFrameCount[npc.type] = 6;
+
+            npc.HitSound = mod.GetLegacySoundSlot(SoundType.NPCHit, "Sounds/NPCHit/ButterveilHit");
+            npc.DeathSound = mod.GetLegacySoundSlot(SoundType.NPCKilled, "Sounds/NPCDeath/ButterveilSoundDeath");
+            music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/ButterveilSecondPhase");
+            //bossBag = mod.ItemType("IceBossBag");
 
         }
 

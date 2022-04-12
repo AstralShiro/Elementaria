@@ -7,19 +7,26 @@ namespace Elementaria.Buffs.Debuffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Blighted Flames");
+			DisplayName.SetDefault("Air Debuff");
+			Description.SetDefault("Decrease the movement speed");
 			Main.buffNoTimeDisplay[Type] = false;
+			Main.debuff[Type] = true;
+			Main.pvpBuff[Type] = true;
+			Main.buffNoSave[Type] = true;
+			longerExpertDebuff = true;
 		}
 
 		public override void Update(NPC npc, ref int buffIndex)
 		{
-			npc.stepSpeed -= 2;
-
-			if (Main.rand.NextBool(2)) {
-				int dust = Dust.NewDust(npc.position, npc.width, npc.height, 61);
-				Main.dust[dust].scale = 3f;
-				Main.dust[dust].noGravity = true;
+			if (!npc.boss) 
+			{
+				npc.velocity.X *= 0f;
+				npc.velocity.Y *= 0f;
 			}
+		}
+		public override void Update(Player player, ref int buffIndex)
+		{
+			player.moveSpeed *= 0.1f;
 		}
 	}
 }

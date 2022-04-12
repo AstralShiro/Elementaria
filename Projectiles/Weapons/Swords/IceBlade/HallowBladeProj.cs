@@ -26,5 +26,9 @@ namespace Elementaria.Projectiles.Weapons.Swords.IceBlade
         {
 			projectile.rotation = projectile.velocity.ToRotation() + 1.57f;
         }
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        {
+            base.OnHitNPC(target, damage, knockback, crit);
+        }
     }
 }

@@ -1,6 +1,8 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Elementaria.Items.Materials;
 
 namespace Elementaria.Items.Materials.Globe
 {
@@ -10,6 +12,7 @@ namespace Elementaria.Items.Materials.Globe
 		{
 			DisplayName.SetDefault("Fire Globe");
 			Tooltip.SetDefault("The soul of a living being infused into a globe, second material to craft the Fire Elemental Core");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 5));
 		}
 
 		public override void SetDefaults() {
