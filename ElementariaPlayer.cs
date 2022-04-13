@@ -24,10 +24,6 @@ namespace Elementaria
 		public bool ZoneSnow;
 		public bool ZoneDungeon;
 
-		public int ResourceBarCurrent;
-		public int ResourceBarMax = 120;
-		public bool ResourceBarBool = true;
-		///Event
 		public override void UpdateBiomes()
 		{
 			ZoneOverworldHeight = player.ZoneOverworldHeight;
@@ -40,16 +36,6 @@ namespace Elementaria
 
 			ZoneDungeon = player.ZoneDungeon;
 
-		}
-		public override void ProcessTriggers(TriggersSet triggersSet)
-		{
-			if (Elementaria.ClassBarUltimate.JustPressed && ResourceBarCurrent > ResourceBarMax)
-            {
-				ResourceBarCurrent = 0;
-				ResourceBarBool = true;
-				Main.NewText("You feel a strange sensation inside you", 85, 135, 255);
-				player.AddBuff(mod.BuffType("AncientPower"), 1800, true);
-			}
 		}
 	}
 }

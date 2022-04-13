@@ -33,6 +33,9 @@ namespace Elementaria.NPCs.Bosses.Butterveils.SecondPhase
             npc.lifeMax = 30000;
             npc.damage = 50;
             npc.defense = 45;
+			
+			npc.height = 372;
+			npc.width = 490; 
 
             npc.knockBackResist = 0f;
 

@@ -6,6 +6,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.Utilities;
 using System;
 
+using Elementaria.Items.Materials.ElementalCores.T1;
+using Elementaria.Tiles.CraftingStation;
+
 namespace Elementaria.Items.Weapons.VanillaWeapons.Swords.IceBlade
 {
 	public class AirBlade : ModItem
@@ -34,6 +37,15 @@ namespace Elementaria.Items.Weapons.VanillaWeapons.Swords.IceBlade
 
             item.UseSound = SoundID.Item28;
         }
+        public override void AddRecipes() 
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<AirCore>(), 1);
+            recipe.AddIngredient(ItemID.IceBlade, 1);
+            recipe.AddTile(ModContent.TileType<ArcaneAnvilTile>());
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+		}
     }
 }
        

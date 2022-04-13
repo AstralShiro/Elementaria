@@ -1,83 +1,68 @@
+using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System;
-using Terraria.Audio;
+
+using Elementaria.Projectiles.Weapons.Swords;
 
 namespace Elementaria.Projectiles.Bosses
 {
 	public class TestProj : ModProjectile
-	{	
-	int timer = 0;
+	{
+		int timer = 0;
+		bool launch = false;
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Tenebrous");
+		}
 		public override void SetDefaults()
 		{
-
-			projectile.width = projectile.height = 12;
+			projectile.width = projectile.height = 4;
+			projectile.aiStyle = 118;
+			projectile.friendly = false;
 			projectile.hostile = true;
-			projectile.aiStyle = 1;
-			projectile.timeLeft = 1200;
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
-			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
-			
-			projectile.damage = 20;
-		}
+			projectile.melee = true;
+			projectile.extraUpdates = 100;
+			projectile.penetrate = -1;
+			projectile.timeLeft = 200;
 
-        public override void AI()
-        {
-			if (projectile.localAI[0] == 0f)
-            {
-                projectile.localAI[0] = 1f;
-            }
-
-			projectile.spriteDirection = projectile.velocity.X > 0 ? 1 : -1;
-			
-			{
-				projectile.rotation += 0.2f;
-				int num622 = Dust.NewDust(new Vector2(projectile.position.X - projectile.velocity.X, projectile.position.Y - projectile.velocity.Y), projectile.width, projectile.height, 168, 0f, 0f, 100, default(Color), 2f);
-				Main.dust[num622].noGravity = true;
-				Main.dust[num622].scale = 1.5f;
-
-			}
-			if(projectile.ai[0] <= 0)
-			{
-				Vector2 move = Vector2.Zero;
-				float distance = 400f;
-				bool target = false;
-				for (int k = 0; k < 200; k++)
-				{
-					if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
-					{
-						Vector2 newMove = Main.npc[k].Center - projectile.Center;
-						float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y); //There's a method for this, but I'm lazy and just imported from ExampleMod.
-						if (distanceTo < distance)
-						{
-							move = newMove;
-							distance = distanceTo;
-							target = true;
-						}
-					}
-				}
-				if (target)
-				{
-					AdjustMagnitude(ref move);
-					projectile.velocity = (20 * projectile.velocity + move) / 11f;				AdjustMagnitude(ref projectile.velocity);
-				}
-			}
-			else
-			{
-				projectile.ai[0]--; //Decrease the timer set from spawn. Can be set to 0 manually to home instantly instead.
-			}
+			projectile.damage = 15;
 			
 		}
-
-		void AdjustMagnitude(ref Vector2 vector)
+		public override string Texture => "Terraria/Projectile_" + ProjectileID.None;
+		public override void AI()
 		{
-			float magnitude = (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y);
-			if (magnitude > 6f)
+			projectile.localAI[0] += 1f;
+			if (projectile.localAI[0] > 9f)
 			{
-				vector *= 6f / magnitude;	
+				for (int i = 0; i < 4; i++)
+				{
+					Vector2 projectilePosition = projectile.position;
+					projectilePosition -= projectile.velocity * ((float)i * 0.25f);
+					projectile.alpha = 255;
+					// Important, changed 173 to 178!
+					int dust = Dust.NewDust(projectilePosition, 1, 1, 173, 0f, 0f, 0, default(Color), 1f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].position = projectilePosition;
+					Main.dust[dust].scale = (float)Main.rand.Next(70, 110) * 0.013f;
+					Main.dust[dust].velocity *= 0.2f;
+				}
 			}
 		}
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        {
+			int projectiles = 12; //Change this number to however many you'd like (Even 100, if you want, though I don't recommend it)
+			float radius = 50f; //change to a value to change the radius of the circle.
+			for(int i = 0; i < projectiles; i++)
+			{
+				Projectile.NewProjectile( target.Center+(Vector2.One.RotatedBy(MathHelper.ToRadians(i*(360/projectiles))))*radius, Vector2.Zero, ModContent.ProjectileType<TenebrousProj2>(), 20, 0f, projectile.owner, 120);
+			}
+		}
+
+        public override void Kill(int timeLeft)
+        {
+
+        }
 	}
 }

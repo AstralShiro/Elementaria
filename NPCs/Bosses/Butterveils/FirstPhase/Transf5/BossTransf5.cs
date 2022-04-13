@@ -13,6 +13,7 @@ using System.Collections.Specialized;
 using Terraria.Localization;
 
 using Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf6;
+using Elementaria.Projectiles.Bosses.EarthTransf;
 using Elementaria.Projectiles.Bosses;
 
 namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf5
@@ -318,7 +319,7 @@ namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf5
 							
 							Player target = Main.player[npc.target];
                         	Vector2 direction = (target.Center - npc.Center).SafeNormalize(Vector2.UnitX);
-                        	int projectile = Projectile.NewProjectile(npc.Center, direction * 1, ModContent.ProjectileType<TestProj>(), 5,0, Main.myPlayer);
+                        	int projectile = Projectile.NewProjectile(npc.Center, direction * 1, ModContent.ProjectileType<EarthSpikeProj>(), 5,0, Main.myPlayer);
 						}
 					}
 				}

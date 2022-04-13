@@ -4,6 +4,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Elementaria.Items.Materials.ElementalCores.T1;
+using Elementaria.Tiles.CraftingStation;
+
 namespace Elementaria.Items.Weapons.VanillaWeapons.Swords.IceBlade
 {
 	public class IceBlade : ModItem
@@ -22,14 +25,14 @@ namespace Elementaria.Items.Weapons.VanillaWeapons.Swords.IceBlade
 			type = ModContent.ProjectileType<IceBladeProj>();
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
-
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Starfury);
-			recipe.AddRecipeGroup("IronBar", 5);
-			recipe.AddTile(TileID.FireflyinaBottle);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+		public override void AddRecipes() 
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<IceCore>(), 1);
+            recipe.AddIngredient(ItemID.IceBlade, 1);
+            recipe.AddTile(ModContent.TileType<ArcaneAnvilTile>());
+            recipe.SetResult(this);
+            recipe.AddRecipe();
 		}
 	}
 }

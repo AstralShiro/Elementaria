@@ -27,7 +27,7 @@ namespace Elementaria.Items.Materials.ElementalCores.T1
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<EmptyCore>(), 1);
-			recipe.AddIngredient(ModContent.ItemType<FireGlobe>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<FireGlobe>(), 25);
 			recipe.AddTile(ModContent.TileType<ElementalPedestalTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();

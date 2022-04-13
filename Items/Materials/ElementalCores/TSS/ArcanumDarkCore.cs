@@ -27,7 +27,7 @@ namespace Elementaria.Items.Materials.ElementalCores.TSS
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<ArcanumEmptyCore>(), 1);
-			recipe.AddIngredient(ModContent.ItemType<DarkGlobe>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<DarkGlobe>(), 200);
 			recipe.AddTile(ModContent.TileType<ElementalPedestalTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();

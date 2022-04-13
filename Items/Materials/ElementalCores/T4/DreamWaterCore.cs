@@ -27,7 +27,7 @@ namespace Elementaria.Items.Materials.ElementalCores.T4
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<DreamEmptyCore>(), 1);
-			recipe.AddIngredient(ModContent.ItemType<WaterGlobe>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<WaterGlobe>(), 100);
 			recipe.AddTile(ModContent.TileType<ElementalPedestalTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
