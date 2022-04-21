@@ -18,7 +18,7 @@ using Elementaria.Projectiles.Bosses;
 
 namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf5
 {
-    //[AutoloadBossHead]
+    [AutoloadBossHead]
     public class BossTransf5 : ModNPC
     {
         private Player player;
@@ -36,6 +36,9 @@ namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf5
             npc.lifeMax = 4000;
             npc.damage = 25;
             npc.defense = 25;
+
+			npc.width = 234;
+			npc.height = 214;
 
             npc.knockBackResist = 0f;
 
@@ -203,7 +206,7 @@ namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf5
 
                         Player target = Main.player[npc.target];
                         Vector2 direction = (target.Center - npc.Center).SafeNormalize(Vector2.UnitX);
-                        int projectile = Projectile.NewProjectile(npc.Center, direction * 10, ModContent.ProjectileType<TestProj>(), 5,0, Main.myPlayer);
+                        int projectile = Projectile.NewProjectile(npc.Center, direction * 10, ModContent.ProjectileType<EarthSpikeProj>(), 5,0, Main.myPlayer);
                     }
 
 				}
@@ -319,7 +322,7 @@ namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf5
 							
 							Player target = Main.player[npc.target];
                         	Vector2 direction = (target.Center - npc.Center).SafeNormalize(Vector2.UnitX);
-                        	int projectile = Projectile.NewProjectile(npc.Center, direction * 1, ModContent.ProjectileType<EarthSpikeProj>(), 5,0, Main.myPlayer);
+                        	int projectile = Projectile.NewProjectile(npc.Center, direction * 1, ModContent.ProjectileType<EarthSpikeKillProj>(), 5,0, Main.myPlayer);
 						}
 					}
 				}
@@ -371,7 +374,7 @@ namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf5
 
 						Player target = Main.player[npc.target];
                         Vector2 direction = (target.Center - npc.Center).SafeNormalize(Vector2.UnitX);
-                        int projectile = Projectile.NewProjectile(npc.Center, direction * 10, ModContent.ProjectileType<TestProj>(), 5,0, Main.myPlayer);
+                        int projectile = Projectile.NewProjectile(npc.Center, direction * 10, ModContent.ProjectileType<EarthSpikeProj>(), 5,0, Main.myPlayer);
 				}
 				if (Main.netMode != 1)
 				{

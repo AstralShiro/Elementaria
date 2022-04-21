@@ -12,18 +12,12 @@ using static Terraria.ModLoader.ModContent;
 
 using Elementaria.Items.Materials.Globe;
 using Elementaria.Items.Materials;
+using Elementaria.Items;
 
 namespace Elementaria.NPCs
 {
     public class GlobalNpc : GlobalNPC
     {
-        public override void SetDefaults(NPC npc) 
-        {
-            if (npc.type == NPCID.GreenSlime)
-            {
-                npc.damage = 204323;
-            }
-		}
         public override void NPCLoot(NPC npc)
 		{
 			if (npc.type == NPCID.AngryBones)
@@ -1038,6 +1032,9 @@ namespace Elementaria.NPCs
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<WaterGlobe>(), Main.rand.Next(0, 2));
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FireGlobe>(), Main.rand.Next(0, 2));
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<MoonLordHeart>());
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TokenS>(), Main.rand.Next(0, 2));
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TokenN>(), Main.rand.Next(0, 2));
+
             }
             if (npc.type == NPCID.Plantera)
             {

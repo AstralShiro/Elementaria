@@ -26,7 +26,6 @@ namespace Elementaria.Projectiles.Bosses
 			projectile.extraUpdates = 100;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 200;
-
 			projectile.damage = 15;
 			
 		}

@@ -15,7 +15,7 @@ using Elementaria.Projectiles.Bosses;
 
 namespace Elementaria.NPCs.Bosses.Butterveils.SecondPhase
 {
-    //[AutoloadBossHead]
+    [AutoloadBossHead]
     public class ButterveilSecondPhase : ModNPC
     {
         private Player player;

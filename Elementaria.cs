@@ -22,6 +22,8 @@ namespace Elementaria
 {
 	public class Elementaria : Mod
 	{
+        public static Mod Naturia;
+
         public Elementaria()
         {
             Properties = new ModProperties()
@@ -64,6 +66,8 @@ namespace Elementaria
                 music = GetSoundSlot(SoundType.Music, "Sounds/Music/Dungeon");
                 priority = MusicPriority.BiomeMedium;
             }
+
+            Mod naturia = ModLoader.GetMod("Naturia");
         }
     }
 }

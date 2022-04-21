@@ -17,7 +17,7 @@ using Elementaria.Projectiles.Bosses;
 
 namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf3
 {
-    //[AutoloadBossHead]
+    [AutoloadBossHead]
     public class BossTransf3 : ModNPC
     {
         private Player player;
@@ -35,6 +35,9 @@ namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf3
             npc.lifeMax = 3000;
             npc.damage = 15;
             npc.defense = 15;
+
+			npc.width = 230;
+			npc.height = 148;
 
             npc.knockBackResist = 0f;
 

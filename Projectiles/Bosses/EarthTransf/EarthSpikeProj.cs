@@ -16,7 +16,7 @@ namespace Elementaria.Projectiles.Bosses.EarthTransf
 
         public override void SetDefaults()
         {
-            projectile.damage = 10;
+            projectile.damage = 25;
             projectile.width = 14;
             projectile.height = 38;
             projectile.aiStyle = -1;

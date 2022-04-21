@@ -3,7 +3,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using System;
-using System.Reflection.Emit;
 
 namespace Elementaria.Projectiles.Bosses.EarthTransf
 {
@@ -25,6 +24,8 @@ namespace Elementaria.Projectiles.Bosses.EarthTransf
             projectile.melee = true;
             projectile.penetrate = 3;
             Main.projFrames[projectile.type] = 5;
+            
+			projectile.timeLeft = 200;
         }
 
         public override void OnHitPlayer(Player player, int damage, bool crit)
@@ -32,20 +33,6 @@ namespace Elementaria.Projectiles.Bosses.EarthTransf
             if (Main.rand.NextBool(3))
             {
                 player.AddBuff(BuffID.Poisoned, 2500, true);
-            }
-        }
-
-        public override void AI()
-        {
-            projectile.frameCounter++;
-            if (projectile.frameCounter > 6)
-            {
-                projectile.frame++;
-                projectile.frameCounter = 0;
-            }
-            if (projectile.frame >= 5)
-            {
-                projectile.Kill();
             }
         }
     }

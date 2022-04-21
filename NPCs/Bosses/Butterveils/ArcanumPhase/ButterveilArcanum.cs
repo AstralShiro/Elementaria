@@ -15,7 +15,7 @@ using Elementaria.Projectiles.Bosses;
 
 namespace Elementaria.NPCs.Bosses.Butterveils.ArcanumPhase
 {
-    //[AutoloadBossHead]
+    [AutoloadBossHead]
     public class ButterveilArcanum : ModNPC
     {
         private Player player;

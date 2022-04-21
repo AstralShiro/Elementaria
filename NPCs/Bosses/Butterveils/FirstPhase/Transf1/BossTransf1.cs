@@ -42,8 +42,8 @@ namespace Elementaria.NPCs.Bosses.Butterveils.FirstPhase.Transf1
             vMax = 6;
             vAccel = .5f;
             
-            npc.width = 162;
-            npc.height = 150;
+            npc.width = 229;
+            npc.height = 148;
 
             npc.aiStyle = 0;
 
