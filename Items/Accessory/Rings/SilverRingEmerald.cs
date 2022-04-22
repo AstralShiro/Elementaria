@@ -12,29 +12,38 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Silver ring with emerald");
-            Tooltip.SetDefault("Life magnet");
+            Tooltip.SetDefault("Increases ranged damage : +20%");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 24;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
-            item.rare = -12;
+            item.rare = 1;
             item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.lifeMagnet = true;
+            player.rangedDamage += 0.2f;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.EmeraldPowder>(), 1);
-            recipe.AddIngredient(ItemID.Emerald, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.EmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.Emerald, 1);
+            recipe.AddIngredient(ItemID.SilverBar, 2 );
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyTile>());
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.EmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.Emerald, 1);
+            recipe.AddIngredient(ItemID.TungstenBar, 2 );
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyTile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

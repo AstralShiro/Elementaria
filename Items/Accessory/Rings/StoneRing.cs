@@ -12,15 +12,15 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Stone ring");
-            Tooltip.SetDefault("+ 10 Defense");
+            Tooltip.SetDefault("Increase your defense. +5 Defense");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 28;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
-            item.rare = -12;
+            item.rare = 2;
             item.accessory = true;
         }
 
@@ -32,9 +32,9 @@ namespace Elementaria.Items.Accessory.Rings
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.StonePowder>(), 1);
-            recipe.AddIngredient(ItemID.StoneBlock, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.RareEmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.StoneBlock, 25);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyT2Tile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

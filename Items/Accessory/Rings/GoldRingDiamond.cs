@@ -12,38 +12,42 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Gold ring with diamond");
-            Tooltip.SetDefault("Life Regen.");
+            Tooltip.SetDefault("Increase all damage : +30% Damage");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 28;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
-            item.rare = -12;
+            item.rare = 3;
             item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.lifeRegen = 5;
+            player.meleeDamage += 0.3f;
+            player.rangedDamage += 0.3f;
+            player.magicDamage += 0.3f;
+            player.thrownDamage += 0.3f;
+            player.minionDamage += 0.3f;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.DiamondPowder>(), 1);
-            recipe.AddIngredient(ItemID.Diamond, 5);
-            recipe.AddIngredient(ItemID.GoldOre, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.MysticEmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.Diamond, 1);
+            recipe.AddIngredient(ItemID.GoldBar, 2);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyT3Tile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
 
             recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.DiamondPowder>(), 1);
-            recipe.AddIngredient(ItemID.Diamond, 5);
-            recipe.AddIngredient(ItemID.PlatinumOre, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.MysticEmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.Diamond, 1);
+            recipe.AddIngredient(ItemID.PlatinumBar, 2);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyT3Tile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

@@ -12,33 +12,31 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Endurance Ring");
-            Tooltip.SetDefault("x2 Life Regen\n+75 Life\ndoubled invicibility period after an attack\nGives you an ice barrier.");
+            Tooltip.SetDefault("Increase your defense but decrease your movement speed. +15 denfese, -14 movement speed.");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 28;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
-            item.rare = -12;
+            item.rare =  4;
             item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.lifeRegen = 10;
-            player.statLifeMax2 += 75;
-            player.longInvince = true;
-            player.iceBarrier = true;
+            player.statDefense += 15;
+            player.moveSpeed -= 0.14f;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.VitalRing>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.TreeRing>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.CrystalRing>(), 1);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.DreamEmptyCore>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.SupremeStoneRing>(), 1);
+            recipe.AddIngredient(ItemID.StoneBlock, 25);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyT4Tile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

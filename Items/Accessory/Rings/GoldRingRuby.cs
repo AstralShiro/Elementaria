@@ -12,13 +12,13 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Gold ring with ruby");
-            Tooltip.SetDefault("+30 Life.");
+            Tooltip.SetDefault("Increases melee damage : +20%");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 37;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
             item.rare = -12;
             item.accessory = true;
@@ -26,24 +26,24 @@ namespace Elementaria.Items.Accessory.Rings
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.statLifeMax2 += 30;
+            player.meleeDamage += 0.2f;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.RubyPowder>(), 1);
-            recipe.AddIngredient(ItemID.GoldOre, 5);
-            recipe.AddIngredient(ItemID.Ruby, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.EmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.GoldBar, 2);
+            recipe.AddIngredient(ItemID.Ruby, 1);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyTile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
 
             recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.RubyPowder>(), 1);
-            recipe.AddIngredient(ItemID.PlatinumOre, 5);
-            recipe.AddIngredient(ItemID.Ruby, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.EmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.PlatinumBar, 2);
+            recipe.AddIngredient(ItemID.Ruby, 1);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyTile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

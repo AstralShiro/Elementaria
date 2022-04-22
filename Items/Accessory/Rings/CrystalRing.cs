@@ -12,29 +12,31 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Crystal Ring");
-            Tooltip.SetDefault("Gives you an ice barrier.");
+            Tooltip.SetDefault("Made you invincible after hit for 2 seconds and made u immune to the lava.");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 39;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
-            item.rare = -12;
+            item.rare = 4;
             item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.iceBarrier = true;
+            player.immuneTime = 2;
+            player.lavaImmune = true;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.CrystalPowder>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.DreamEmptyCore>());
+            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.ObsidianRing>(), 1);
             recipe.AddIngredient(ItemID.CrystalShard, 25);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyT4Tile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

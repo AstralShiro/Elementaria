@@ -17,10 +17,10 @@ namespace Elementaria.Items.Accessory.Rings
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 20;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
-            item.rare = -12;
+            item.rare = 2;
             item.accessory = true;
         }
 
@@ -32,9 +32,9 @@ namespace Elementaria.Items.Accessory.Rings
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.ObsidianPowder>(), 1);
-            recipe.AddIngredient(ItemID.Obsidian, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.MysticEmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.Obsidian, 2);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyT3Tile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

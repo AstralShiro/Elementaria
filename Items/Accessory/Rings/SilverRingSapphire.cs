@@ -11,30 +11,39 @@ namespace Elementaria.Items.Accessory.Rings
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gravity ring");
-            Tooltip.SetDefault("press W for control gravity.");
+            DisplayName.SetDefault("Silver ring with sapphire");
+            Tooltip.SetDefault("Increases magic damage : +20%");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 20;
+            item.width = 30;
+            item.height = 30;
             item.value = 10;
-            item.rare = -12;
+            item.rare = 1;
             item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.gravControl = true;
+            player.magicDamage += 0.2f;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ModContent.ItemType<Items.Powders.SapphirePowder>(), 1);
-            recipe.AddIngredient(ItemID.Sapphire, 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.EmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.Sapphire, 1);
+            recipe.AddIngredient(ItemID.SilverBar, 2);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyTile>());
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.EmptyCore>(), 1);
+            recipe.AddIngredient(ItemID.Sapphire, 1);
+            recipe.AddIngredient(ItemID.TungstenBar, 2);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyTile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
