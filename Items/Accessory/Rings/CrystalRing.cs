@@ -12,7 +12,7 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Crystal Ring");
-            Tooltip.SetDefault("Made you invincible after hit for 2 seconds and made u immune to the lava.");
+            Tooltip.SetDefault("Made you invincible when you are hitted for a little time and made u immune to the lava.");
         }
 
         public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Elementaria.Items.Accessory.Rings
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.immuneTime = 2;
+            player.immune = true;
             player.lavaImmune = true;
         }
 

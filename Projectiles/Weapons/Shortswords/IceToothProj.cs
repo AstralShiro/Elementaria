@@ -6,20 +6,20 @@ using Terraria.ModLoader;
 
 using Elementaria.Projectiles.Weapons.Swords;
 
-namespace Elementaria.Projectiles
+namespace Elementaria.Projectiles.Weapons.Shortswords
 {
-	class Earthquake : ModProjectile
+	class IceToothProj : ModProjectile
 	{
 		int timer = 0;
 		bool launch = false;
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tenebrous");
+			DisplayName.SetDefault("Ice Tooth");
 		}
 		public override void SetDefaults()
 		{
 			projectile.width = projectile.height = 4;
-			projectile.aiStyle = 135;
+			projectile.aiStyle = 92;
 			projectile.friendly = true;
 			projectile.hostile = false;
 			projectile.melee = true;
@@ -42,7 +42,7 @@ namespace Elementaria.Projectiles
 					projectilePosition -= projectile.velocity * ((float)i * 0.25f);
 					projectile.alpha = 255;
 					// Important, changed 173 to 178!
-					int dust = Dust.NewDust(projectilePosition, 1, 1, 174, 0f, 0f, 0, default(Color), 1f);
+					int dust = Dust.NewDust(projectilePosition, 1, 1, 180, 0f, 0f, 0, default(Color), 1f);
 					Main.dust[dust].noGravity = true;
 					Main.dust[dust].position = projectilePosition;
 					Main.dust[dust].scale = (float)Main.rand.Next(70, 110) * 0.013f;
@@ -50,16 +50,6 @@ namespace Elementaria.Projectiles
 				}
 			}
 		}
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-			int projectiles = 12; //Change this number to however many you'd like (Even 100, if you want, though I don't recommend it)
-			float radius = 50f; //change to a value to change the radius of the circle.
-			for(int i = 0; i < projectiles; i++)
-			{
-				Projectile.NewProjectile( target.Center+(Vector2.One.RotatedBy(MathHelper.ToRadians(i*(360/projectiles))))*radius, Vector2.Zero, ModContent.ProjectileType<TenebrousProj2>(), 20, 0f, projectile.owner, 120);
-			}
-		}
-
         public override void Kill(int timeLeft)
         {
 

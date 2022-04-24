@@ -12,42 +12,46 @@ namespace Elementaria.Items.Accessory.Rings
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("GodlyRing");
-            Tooltip.SetDefault("x2 Life Regen\n+150 Life\ndoubled invicibility period after an attack\nGives you an ice barrier\n+ 20 Defense.");
+            Tooltip.SetDefault("Give all the effects of the rings\n+50 damage\nLife regen (4 HP per second)\nMana regen (4 Mana per second)\nStar cloak\n+20 defense\n+20 movement speed\n+200 HP\n+200 Mana\nStar Cloak\nLava immune\nInvincibilty when you are hitted for a little time");
         }
 
         public override void SetDefaults()
         {
-            item.width = 25;
-            item.height = 28;
+            item.width = 34;
+            item.height = 34;
             item.value = 10;
-            item.rare = -12;
+            item.rare = 5;
             item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.lifeRegen = 10;
-            player.statLifeMax2 += 150;
+            player.meleeDamage += 0.5f;
+            player.rangedDamage += 0.5f;
+            player.magicDamage += 0.5f;
+            player.thrownDamage += 0.5f;
+            player.minionDamage += 0.5f;
+            player.lifeRegen = 4;
+            player.statLifeMax2 += 200;
+            player.statManaMax2 += 200;
+            player.manaRegen += 4;
+            player.starCloak = true;
             player.statDefense += 20;
-            player.longInvince = true;
-            player.iceBarrier = true;
-            player.starCloak = true;      
-            player.gravControl = true;      
-            player.manaRegen = 4;
-            player.lifeMagnet = true;
+            player.moveSpeed -= 0.15f;
+            player.immune =true;
             player.lavaImmune = true;
-            player.manaMagnet = true;
-            player.statManaMax2 += 50;
-            player.magicDamage += 0.10f;
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.ElementalCores.CosmoEmptyCore>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.GlassRing>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.TreeRing>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.StarRing>(), 1);
             recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.EnduranceRing>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.SupremeVitalRing>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.SupremeStoneRing>(), 1);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ModContent.ItemType<Items.Accessory.Rings.CrystalRing>(), 1);
+            recipe.AddTile(ModContent.TileType<Tiles.CraftingStation.ArcaneSmithyTSTile>());
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
