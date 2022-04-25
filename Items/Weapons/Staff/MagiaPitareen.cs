@@ -5,7 +5,7 @@ using Terraria;
 
 using Elementaria.Projectiles.Weapons.Shortswords;
 
-namespace Elementaria.Items.Weapons.Sword
+namespace Elementaria.Items.Weapons.Staff
 {
 	class MagiaPitareen : ModItem
 	{
